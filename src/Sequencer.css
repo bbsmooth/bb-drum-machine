@@ -1,0 +1,180 @@
+/* BeatGenerator.css */
+
+.beat_tracker_row {
+	padding-bottom: 0.25em;
+    margin: 0 auto;
+    margin-top: 0.5em;
+    display: none;
+    text-align: center;
+}
+#beat_tracker_controls {
+    margin: 0 auto;
+    width: auto;
+}
+#beat_tracker_controls button:focus,
+#beat_tracker_controls input:focus {
+    outline: 5px dotted black;
+}
+#beat_tracker_controls button:hover,
+#beat_tracker_controls input:hover {
+    cursor: pointer;
+}
+#sequencer_section[aria-hidden="true"] #beat_tracker_controls,
+#sequencer_section[aria-hidden="true"] .beat_tracker_row
+{
+    display: none;
+}
+.sequencer_controls_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.25em;
+}
+.sequencer_controls_wrap input {
+    vertical-align: middle;
+}
+.sequencer_controls_wrap .tempo_wrap, 
+.sequencer_controls_wrap .master_volume_wrap {
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*
+.master_volume_wrap {
+    order: 2;
+}
+.tempo_wrap {
+    order: 1;
+}
+*/
+.sequencer_controls_wrap + .sequencer_controls_wrap {
+    margin-top: 0.25em;
+}
+.sequencer_controls_wrap button {
+    padding: 0.15em 0;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    width: 4em;
+    text-align: center;
+    background-color: #F6F5F4;
+}
+#beats_per_minute {
+    display: inline-block;
+    text-align: right;
+    margin-top: -0.25em;
+}
+label[for="tempo"], label[for="master_volume"] {
+    padding-right: 0.25em;
+}
+[data-power="off"] #beat_tracker_controls .control,
+[data-power="off"] #beat_tracker_controls .control:hover
+{
+    background-color: #F6F5F4;
+}
+#beat_tracker_controls .control:hover {
+    background-color: white;
+}
+
+#sequencer_section {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0;
+}
+#master_volume {
+    width: 100%;
+}
+#master_volume_display {
+    padding-left: 0.25em;
+    margin-top: -0.25em;
+}
+#tempo {
+    width: 100%;
+}
+#beats_per_minute .bpm {
+    font-size: 0.85em;
+}
+#sequencer_on_off {
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    color: black;
+    /*order: 3;*/
+    margin-top: 0;
+    margin-bottom: 0.75em;
+}
+
+[data-current_beat="1"] #beat_tracker [data-beat="1"],
+[data-current_beat="2"] #beat_tracker [data-beat="2"],
+[data-current_beat="3"] #beat_tracker [data-beat="3"],
+[data-current_beat="4"] #beat_tracker [data-beat="4"],
+[data-current_beat="5"] #beat_tracker [data-beat="5"],
+[data-current_beat="6"] #beat_tracker [data-beat="6"],
+[data-current_beat="7"] #beat_tracker [data-beat="7"],
+[data-current_beat="8"] #beat_tracker [data-beat="8"],
+[data-current_beat="9"] #beat_tracker [data-beat="9"],
+[data-current_beat="10"] #beat_tracker [data-beat="10"],
+[data-current_beat="11"] #beat_tracker [data-beat="11"],
+[data-current_beat="12"] #beat_tracker [data-beat="12"],
+[data-current_beat="13"] #beat_tracker [data-beat="13"],
+[data-current_beat="14"] #beat_tracker [data-beat="14"],
+[data-current_beat="15"] #beat_tracker [data-beat="15"],
+[data-current_beat="16"] #beat_tracker [data-beat="16"]
+{
+    background-color: yellow !important;
+}
+
+@media screen and (min-width: 21em) {
+    #beat_tracker_controls button:focus,
+    #beat_tracker_controls input:focus {
+        outline: 3px dotted black;
+    }
+}
+
+@media screen and (min-width: 25em) {
+    #sequencer_section {
+        padding-bottom: 0.5em;
+    }
+    .sequencer_controls_wrap {
+        flex-direction: row;
+    }
+    .tempo_wrap {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-basis: 40%;
+        margin: 0 0.25em;
+        order: 2;
+        background-color: transparent;
+    }
+    label[for="tempo"] {
+        padding-right: 0.25em;
+    }
+    #beats_per_minute {
+        padding-left: 0.25em;
+        margin-top: 0;
+    }
+    .master_volume_wrap {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-basis: 40%;
+        margin: 0 0.25em 0 0;
+        order: 3;
+        background-color: transparent;
+    }
+    label[for="master_volume"] {
+        padding-right: 0.25em;
+    }
+    #master_volume_display {
+        padding-left: 0.25em;
+        margin-top: 0;
+    }
+    #sequencer_on_off {
+        flex-basis: 20%;
+        margin-bottom: 0;
+        margin-right: 0.25em;
+        order: 1;
+        margin-top: 0;
+    }
+}

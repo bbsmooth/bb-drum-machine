@@ -1,0 +1,10 @@
+/* SequencerCell.css */
+#beat_tracker .beat {
+	height: 1.1em;
+	line-height: 1.1;
+	text-align: center;
+	background-color: #ccc;
+}
+#beat_tracker .beat:hover {
+	cursor: default;
+}

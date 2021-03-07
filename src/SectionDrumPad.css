@@ -1,0 +1,286 @@
+/* SectionDrumPad.css */
+
+#drumpads[aria-hidden="true"] .drumpad {
+    display: none;
+}
+#drumpads .drumpad {
+    margin-top: 0.5em;
+}
+.drumpad_row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.drumpad_row + .drumpad_row {
+    margin-top: 1em;
+}
+.drumpad[aria-hidden="true"] {
+    display: none;
+}
+.padWrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 8.5em;
+}
+.padWrap + .padWrap {
+    margin-top: 1em;
+}
+.pad {
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: #F6F5F4;
+	padding-top: 100%;
+	position: relative;
+	display: block;
+}
+.pad:hover {
+    cursor: pointer;
+}
+.pad .key {
+    text-transform: capitalize;
+}
+.pad:focus {
+    outline: 5px dotted black;
+}
+.padWrap .volumeCtrl {
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 0.9em;
+    position: relative;
+    margin-top: 0.5em;
+}
+.padWrap .volumeCtrl label {
+    font-size: 0.8em;
+    padding-right: 0.25em;
+}
+.padWrap .volumeCtrl input {
+    /*width: 100%;*/
+    /* Fix for Firefox */
+    width: calc(100% - 2.5em);
+}
+.volumeCtrl input:focus {
+    outline: 5px dotted black;
+}
+.volumeCtrl input:hover {
+    cursor: pointer;
+}
+.fileLoad button, .editName button {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	display: inline-block;
+	border: 1px solid darkgray;
+    border-radius: 0.2em;
+    font-size: 0.8em;
+    background-color: #F6F5F4;
+    padding: 0.25em 0;
+    width: 3em;
+    text-align: center;
+}
+.fileLoad button:focus, .editName button:focus {
+    outline: 5px dotted black;
+}
+.fileLoad button:hover, .editName button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+[data-power="off"] .fileLoad button:hover,
+[data-power="off"] .editName button:hover {
+    background-color: #F6F5F4;
+}
+.padCtrlWrap {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5em;
+}
+.padButtonWrap {
+    position: relative;
+}
+.padButtonWrap .editInput {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+.padButtonWrap .editInput input {
+    height: 50%;
+    width: 100%;
+    resize: none;
+}
+.pad .name {
+	overflow-wrap: break-word;
+	position: absolute;
+	top: 0.25em;
+    left: 0;
+    padding: 0 0.5em;
+    width: calc(100% - 1em);
+    line-height: 1;
+}
+.pad .name[contenteditable="true"] {
+    background-color: white;
+    min-height: 1.5em;
+    min-width: 7em;
+    outline: 3px dotted black !important;
+}
+.pad .name[contenteditable="true"]:hover {
+    cursor: text;
+}
+.pad .keyWrap {
+	position: absolute;
+	bottom: 0.75em;
+	font-size: 2.5em;
+    left: calc(50% - 0.75em);
+    height: 1.5em;
+    width: 1.5em;
+    display: flex;
+    justify-content: center;
+}
+.pad .key {
+    font-weight: bold;
+    line-height: 1.5;
+}
+[data-drumpadkeys="false"] .pad .key {
+    opacity: .35;
+}
+.pad .not-allowed {
+    display: none;
+    position: absolute;
+    opacity: 0.4;
+    left: 0;
+}
+.pad .not-allowed img {
+    height: 1.5em;
+    width: 1.5em;
+}
+[data-drumpadkeys="false"] .pad .not-allowed {
+    display: inline;
+}
+
+button.pad:hover {
+    background-color: white;
+}
+button.pad.clicked {
+    background-color: rgba(250, 250, 250, 0.25);
+    -webkit-box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.32);
+    -moz-box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.32);
+    box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.32);
+}
+
+.volumeDisplay {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 1.75em;
+    border: 1px solid black;
+    text-align: center;
+    z-index: 9999;
+}
+.display-volume .volumeDisplay {
+    display: block;
+    top: -1.5em;
+}
+
+#drumpads_single_file {
+    position: absolute;
+    display: block;
+}
+
+@media screen and (min-width: 21em) {
+    #drumpads_single_file {
+        display: none;
+    }
+    .drumpad_row {
+        flex-direction: row;
+    }
+    .padWrap + .padWrap {
+        margin-top: 0;
+        margin-left: 0.25em;
+    }
+    .editName {
+        margin-left: 0.25em;
+    }
+    .pad .name {
+        line-height: 0.9;
+        top: 0.1em;
+        letter-spacing: -1px;
+        padding: 0 5px;
+        width: calc(100% - 10px);
+    }
+    .pad .keyWrap {
+        bottom: 0.1em;
+        width: 1em;
+        height: 1em;
+        left: calc(50% - 0.5em);
+    }
+    .pad .key {
+        line-height: 1;
+        font-size: 0.9em;
+    }
+    .pad .not-allowed {
+        left: unset;
+        top: -0.25em;
+        height: 1.35em;
+    }
+    .pad .not-allowed img {
+        height: 1.35em;
+        width: 1.35em;
+    }
+    .pad:focus {
+        outline: 3px dotted black;
+    }
+    .volumeCtrl input:focus {
+        outline: 3px dotted black;
+    }
+    .fileLoad button:focus, .editName button:focus {
+        outline: 3px dotted black;
+    }
+}
+
+@media screen and (min-width: 25em) {
+    .pad .name {
+        overflow-wrap: break-word;
+        position: absolute;
+        top: 0.25em;
+        left: 0;
+        padding: 0 0.25em;
+        width: calc(100% - 0.5em);
+        letter-spacing: normal;
+        line-height: 1;
+    }
+    .pad .keyWrap {
+        position: absolute;
+        bottom: 0.75em;
+        font-size: 2.5em;
+        left: calc(50% - 0.75em);
+        height: 1.5em;
+        width: 1.5em;
+        display: flex;
+        justify-content: center;
+        bottom: 0.2em;
+    }
+    .pad .key {
+        font-weight: bold;
+        line-height: 1;
+        margin-top: 0.075em;
+    }
+    .drumpad_row {
+        width: calc(100% - 0.5em);
+    }
+    .pad .not-allowed {
+        left: unset;
+        top: -0.25em;
+        height: 1.5em;
+    }
+    .pad .not-allowed img {
+        height: 1.5em;
+        width: 1.5em;
+    }
+}

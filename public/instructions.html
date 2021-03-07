@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="instructions" content="Instructions for BB Drum Machine" />
+    <link rel="stylesheet" href="./instructions.css"/>
+    <title>Instructions for BB Drum Machine</title>
+</head>
+
+<body>
+    <main>
+        <h1>Instructions for BB Drum Machine</h1>
+
+        <section>
+            <h2>Introduction</h2>
+            <p>BB Drum Machine allows you to easily create a looping drum beat. You merely select which sounds you want to play at the specified times and then start the player to hear your beat. You can edit your beats in real time, load your own sounds into the drum machine, and save your creations for posterity.<p>
+            </p> BB Drum Machine is broken into the following sections.</p>
+        </section>
+
+        <section>
+            <h2>Drum Pads</h2>
+            <p>There are nine individual drum pad buttons in this section. Each pad will play the sound currently loaded in it. For keyboard users, if you enable 'Auto-Play Keys' in the Options menu then you can play the sound using the associated keyboard key as well.</p>
+            <p>There are two sound banks, each with nine sounds that can be loaded into the drum pads. You can switch between the sound banks using the Sounds menu. For keyboard users, you can switch between sound banks using the keyboard combination <span class="nobr">'Alt + Number'</span> where Number is the sound bank number you want to load. In order to use this option you must enable <span class="nobr">'Alt Shortcuts'</span> in the Options menu.</p>
+            <h3>Volume</h3>
+            <p>The Volume control allows you to control the volume of the sound.</p>
+            <h3>Load</h3>
+            <p>The Load button allows you to load a custom sound into the drum pad. The file you choose must be an audio file and cannot be larger than 500,000 kilobytes.</p>
+            <h3>Edit</h3>
+            <p>The Edit button allows you to change the name of the sound. The maximum number of characters is 40.</p>
+            <h3>Keyboard Shortcuts</h3>
+            <p>While focus is on any drum pad button, you can use the arrow keys to navigate to another drum pad button. Use the Escape key at any time to leave the drum pads section.</p>
+        </section>
+
+        <section>
+            <h2>Player</h2>
+            <p>The player controls the playing of the drum tracks. Use the Start/Stop button to listen to the drum tracks. The Tempo control determines the speed at which the drum tracks will be played (in Beats per Minute). The Volume control allows you to control the overall volume. For keyboard users, you can start/stop the player using the keyboard combination <span class="nobr">'Alt + s'</span>. In order to use this option you must enable <span class="nobr">'Alt Shortcuts'</span> in the Options menu.</p>
+            <h3>Keyboard Shortcuts</h3>
+            <p>Use the Escape key at any time to leave the player section.</p>
+        </section>
+
+        <section>
+            <h2>Drum Tracks</h2>
+            <p>The drum tracks allow you to play a sound at a specified time. Each track represents one measure in 4/4 time, with each button in the track representing a sixteenth note. Activating a button will tell the player to play the sound for that track at that specific beat in the measure.
+            </p>
+            <p>Similar to the drum pads, there are nine tracks showing, one for each sound currently loaded in the drum pads. You can toggle between the sound banks using the same mechanism as for the drum pads. Even though only 9 tracks are showing, the player will play all 18 drum tracks.</p>
+            <p>The trash can icon will clear the drum track. If you wish to clear all 18 drum tracks then you can use the 'Clear All Tracks' option under the Options menu.</p>
+            <h3>Keyboard Shortcuts</h3>
+            <p>While focus is on any drum track button, you can use the arrow keys to navigate through the drum tracks. Use the Escape key at any time to leave the drum tracks section.</p>
+        </section>
+
+        <section>
+            <h2>Menu</h2>
+
+            <p>Keyboard users can navigate the menu with the arrow keys. The Space Bar or Enter key will select a menu item. Use the Escape key or Tab key at any time to leave the menu. If the menu is in vertical display (for narrower displays) then you will need to activate the menu icon first to expand the menu.</p>
+
+            <h3>File</h3>
+            <div class="indent">
+            <h4>Save Session</h4>
+            <p>This allows you to save the current state of the drum machine. It will create a session zip file that you can save to your computer/device.</p>
+            <h4>Load Session</h4>
+            <p>This allows you to load a saved session zip file.</p>
+            </div>
+            <h3>Sounds</h3>
+            <p>This allows you to toggle between the sound banks.</p>
+            <h3>Options</h3>
+            <div class="indent">
+            <h4>Auto-Play Keys</h4>
+            <p>When activated, allows you to play a sound using the keyboard key specified on the drum pad.</p>
+            <h4>Alt Shortcuts</h4>
+            <p>When activated, allows you to use keyboard shortcuts using Alt key combinations as follows:</p>
+            <ul>
+                <li><span class="nobr">Alt + Down/Up Arrow:</span> Allows you to move between the different sections of the drum machine.</li>
+                <li><span class="nobr">Alt + s:</span> Start/Stop the player</li>
+                <li><span class="nobr">Alt + 1 or 2:</span> Switch between sound banks 1 and 2.</li>
+            </ul>
+            <h4>Metronome</h4>
+            <p>When activated, the player will include a click sound at the beginning of every quarter note.</p>
+            <h4>Clear All Tracks</h4>
+            <p>Clears all 18 drum tracks.</p>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

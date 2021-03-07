@@ -1,0 +1,10 @@
+/* DrumPadsSection.css */
+/*
+#drumpads [role="tablist"] {
+    left: 7em;
+}
+*/
+#drumpads {
+    width: 100%;
+    padding-top: 0.75em;
+}

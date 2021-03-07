@@ -1,0 +1,317 @@
+@import url("./fonts/font-awesome/css/font-awesome.min.css");
+
+/* removes annoying button focus indicator in FF */
+::-moz-focus-inner {
+  border: 0;
+}
+
+[data-showfocus='false'] *:focus {
+  outline: none !important;
+}
+
+html {
+  font-size: 1.2rem;
+}
+
+body {
+  font-size: 100%;
+  /*font-size: 18px;*/
+  font-family: Arial, Helvetica, sans-serif;
+  /* need this to detect mouse clicks outside of menu */
+  height: 100vh;
+}
+
+#root {
+  position: relative;
+  z-index: 100;
+  margin-top: 3.5em;
+}
+
+#test_trash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*z-index: -1;*/
+  color: transparent;
+}
+
+#drum-machine {
+  width: 100%;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  /* added line */
+}
+
+[data-power="off"] button .name,
+[data-power="off"] .drumtracks h3,
+[data-power="off"] .beat,
+[data-power="off"] .volumeCtrl,
+[data-power="off"] .sequencer_controls_wrap label,
+[data-power="off"] #beats_per_minute {
+  color: #999;
+}
+
+#h1_wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  margin-top: -4.4em;
+  z-index: 999999;
+  width: calc(99vw - 0.75em);
+  background: white;
+  text-align: center;
+  position: fixed;
+  max-width: 31.25em;
+}
+
+#app_wrapper {
+  width: 100%;
+  position: relative;
+}
+
+#drum-machine[data-power="off"] input,
+#drum-machine[data-power="off"] button,
+#drum-machine[data-power="off"] [role="button"] {
+  cursor: not-allowed !important;
+}
+
+/* Modal dialog */
+#modalCloseButton {
+  margin: 0 auto;
+  margin-top: 1em;
+  display: block;
+}
+
+.ReactModalPortal p {
+  margin: 0;
+}
+
+.section_wrap {
+  width: 100%;
+  max-width: 25em;
+  /*min-width: calc(300px + 2em);*/
+  box-sizing: border-box;
+  position: relative;
+  background-color: white;
+}
+
+.section_wrap+.section_wrap {
+  margin-top: 0.5em;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  width: 100%;
+}
+
+.placeholder_button {
+  width: 100%;
+  max-width: 8.5em;
+  min-width: 100px;
+  height: 0;
+}
+
+.placeholder_button+.placeholder_button {
+  margin-left: 0.25em;
+}
+
+section[aria-hidden="true"] .placeholder_button {
+  height: 0.5em;
+}
+
+.section-header {
+  font-size: 1em;
+  margin: 0;
+  background-color: white;
+  z-index: 999;
+}
+
+.section-header>button {
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  outline: none;
+}
+
+[data-whatinput="keyboard"] .section-header>button:focus i {
+  outline: 5px dotted black;
+}
+
+.section-header>button .complete {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+[role="tablist"] {
+  display: inline;
+  position: absolute;
+  /*top: calc(-0.65em - 1px);*/
+  top: calc(-1.15em - 1px);
+  font-size: 0.8em;
+}
+
+.Tabs-tablist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.Tabs-tablistItem {
+  display: inline-block;
+}
+
+.Tabs-tablistItem+.Tabs-tablistItem {
+  margin-left: 3px;
+}
+
+.Tabs-tab {
+  cursor: pointer;
+  width: 8.5em;
+  text-align: center;
+  background-color: #F6F5F4;
+  font-weight: bold;
+  color: #555;
+  border: 1px solid darkgray;
+  text-transform: uppercase;
+  padding-top: 0.25em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  ;
+}
+
+.Tabs-tab:focus {
+  outline: 3px dotted black;
+}
+
+.Tabs-tab[aria-selected="true"] {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding-top: 0.5em;
+}
+
+[role="tabpanel"] {
+  padding-top: 0.25em;
+}
+
+.Tabs-tab[aria-selected="true"] .tab-label {
+  border-top: 0.2em solid blue;
+}
+
+@media screen and (min-width: 17em) {
+  .section-header>button .complete {
+    position: static !important;
+    overflow: visible;
+    clip: auto;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 21em) {
+  [data-whatinput="keyboard"] .section-header>button:focus i {
+    outline: 3px dotted black;
+  }
+}
+
+@media screen and (min-width: 25em) {
+  .section-border {
+    position: relative;
+    border: 1px solid black;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 7px;
+    padding-left: 0.5em;
+    padding-left: 0.5em;
+  }
+  .section-header {
+    position: absolute;
+    top: -0.55em;
+    line-height: 0.9;
+    left: 0.5em;
+  }
+  .section_wrap {
+    margin-top: 0.5em;
+  }
+  .section_wrap+.section_wrap {
+    margin-top: 1em;
+  }
+  .section_wrap>h2>button:before {
+    content: '\00A0';
+  }
+  .section_wrap>h2>button>i {
+    border: 1px solid black;
+    padding: 0.15em 0.25em;
+    border-radius: 1em;
+  }
+  #h1_wrapper {
+    max-width: 25em;
+  }
+}
+
+@media screen and (min-width: 38em) {
+  h1 {
+    position: absolute;
+    z-index: 9999;
+    white-space: nowrap;
+    letter-spacing: 5px;
+    font-size: 1.8em;
+    margin-left: 100%;
+    margin-top: 0;
+    transform-origin: left;
+    transform: rotate(90deg);
+    left: 0.75em;
+    top: 4.355em;
+    text-align: left;
+    padding-bottom: 0;
+    width: auto;
+    max-width: none;
+  }
+  [data-hideheader="true"] h1 {
+    position: absolute !important;
+	  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	  clip: rect(1px, 1px, 1px, 1px);
+	  padding:0 !important;
+	  border:0 !important;
+	  height: 1px !important; 
+	  width: 1px !important; 
+	  overflow: hidden;
+  }
+  #root {
+    margin-top: 3em;
+  }
+}

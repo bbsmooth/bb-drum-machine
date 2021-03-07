@@ -1,0 +1,38 @@
+/* Drumpad.css */
+.drumpad[aria-hidden="true"] {
+    display: none;
+}
+.drumpad_wrap {
+    /*
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    */
+    /*
+    width: 36em;
+    margin: 0 auto;
+    */
+}
+.drumpad_row {
+    display: flex;
+    flex-direction: column;
+    /*padding: 0 0.5em;*/
+}
+.drumpad_row + .drumpad_row {
+    margin-top: 1em;
+}
+/*
+.drumpad {
+    margin-left: auto;
+    margin-right: auto;
+    width: 27.5em;
+}
+*/
+/*
+.drumpad {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+*/
+.drumpad[aria-hidden="true"] {
+    display: none;
+}

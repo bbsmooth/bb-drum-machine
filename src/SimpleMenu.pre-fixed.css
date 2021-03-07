@@ -1,0 +1,299 @@
+/* Menu.css */
+nav {
+    width: auto;
+    max-width: 25em;
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+    z-index: 999;
+    position: relative;
+    background-color: #eee;
+    border: 1px solid black;
+    height: 1.87em;
+}
+
+.boxMenu .hamburger {
+    height: 1em;
+    width: 1em;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    right: 0.25em;
+    top: calc(50% - 0.5em);
+    cursor: pointer;
+    font-size: 1.25em;
+    line-height: 1;
+    color: black;
+    background-color: #eee;
+}
+.boxMenu .hamburger:focus {
+    outline: 3px dotted black;
+}
+.boxMenu .hamburger:hover {
+    color: darkblue;
+    background-color: #bbb;
+}
+
+/* primary menu */
+ul[role="menubar"] {
+    display: none;
+}
+
+/* when menu is vertical and hamburger icon is pressed */
+.show-menu ul[role="menubar"] {
+    display: block;
+    background-color: #eee;
+    border: 1px solid black;
+    position: absolute;
+    right: 0;
+    margin-top: 1.95em;
+    padding: 0;
+}
+
+
+/* items in primary menu */
+ul[role="menubar"] li {
+    list-style: none;
+}
+nav.show-menu > ul[role="menubar"] > li {
+    cursor: pointer;
+    border-left: 8px solid transparent;
+    position: relative;
+    line-height: 1;
+    padding-top: 0.25em;
+    padding-bottom: calc(0.25em - 1px);
+}
+nav.show-menu > ul[role="menubar"] > li:before {
+    content: '';
+    display: inline-block;
+    padding-right: 0.25em;
+}
+nav.show-menu > ul[role="menubar"] > li + li {
+    border-top: 1px solid darkgray;
+}
+nav.show-menu ul[role="menubar"] > li:hover {
+    color: darkblue;
+    outline: none;
+    border-left: 8px solid darkblue;
+}
+nav.show-menu > ul[role="menubar"] > li:focus,
+.inFocus li[role="menuitem"][aria-expanded="true"] {
+    color: darkblue;
+    outline: none;
+    border-left: 8px solid darkblue;
+}
+nav.show-menu li[role="menuitem"][aria-expanded="true"] + li {
+    border-top: 1px solid black;
+}
+
+/* secondary menu */
+nav.show-menu ul[role="menu"] {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: auto;
+    display: block;
+    z-index: 800;
+    background-color: #eee;
+    border-top: 1px solid black;
+    height: 0;
+}
+nav.show-menu li[aria-expanded="true"] ul[role="menu"] {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    margin-top: 0.25em;
+    margin-bottom: -0.25em;
+}
+
+/* items in secondary menu */
+nav.show-menu ul[role="menu"] li { 
+    background-color: white;
+    color: #000;
+    padding-left: 1em !important;
+    position: relative;
+    left: -8px;
+    padding-right: 1em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    margin-right: -8px;
+}
+nav.show-menu ul[role="menu"] li + li { 
+    border-top: 1px solid darkgray;
+}
+nav.show-menu ul[role="menu"] li:hover,
+nav.show-menu ul[role="menu"] li:focus 
+{
+    background-color: #0000AD !important;
+    color: white !important;
+    outline: none;
+}
+ul[aria-hidden="false"] [role="menuitemradio"][aria-checked="true"]:before {
+    content: '\2713';
+    display: block;
+    float: left;
+    width: 1em;
+    text-align: center;
+    margin-left: -1em;
+    font-weight: bold;
+}
+.show-menu ul[role="menu"] li:last-child {
+    border-bottom: 1px solid black;
+}
+
+@media screen and (min-width: 27.5em) {
+
+    .boxMenu .hamburger {
+        height: 0;
+        width: 0;
+        padding: 0;
+        display: none;
+    }
+
+    nav {
+        width: auto;
+        max-width: 25em;
+        margin: 0 auto;
+        margin-bottom: 0.5em;
+        z-index: 999;
+        position: relative;
+        border: none;
+    }
+
+    ul[role="menubar"] {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background-color: #eee;
+        border: 1px solid black;
+    }
+
+    ul[role="menubar"]>li {
+        display: inline-block;
+        position: relative;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+    }
+
+    nav ul[role="menubar"]>li+li {
+        border-left: 1px solid lightgray !important;
+    }
+
+
+    ul[role="menubar"] [role="menuitem"],
+    ul[role="menubar"] [role="menuitemcheckbox"],
+    ul[role="menubar"] [role="menuitemradio"],
+    ul[role="menubar"] [role="separator"] {
+        background-color: #eee;
+        border: 0;
+        color: black;
+    }
+
+    ul[role="menu"] {
+        /*display: none;*/
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.4s ease-out;
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        width: auto;
+    }
+
+    nav.boxMenu {
+        cursor: default !important;
+    }
+
+    nav.boxMenu li[role="menuitem"] {
+        cursor: pointer !important;
+        border-bottom: 0.2em solid transparent;
+        border-top: 0.2em solid transparent;
+        line-height: 1;
+    }
+
+    nav:not(.inFocus) ul[role="menubar"]>li:hover {
+        color: darkblue;
+        outline: none;
+        border-bottom: 0.2em solid darkblue;
+    }
+
+    ul[role="menubar"]>li:focus,
+    .inFocus li[role="menuitem"][aria-expanded="true"] {
+        color: darkblue;
+        outline: none;
+        border-bottom: 0.2em solid darkblue;
+        border-left: 0;
+    }
+
+    li[aria-expanded="true"]>ul[role="menu"] {
+        display: block;
+        z-index: 100;
+        top: 1.7em;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    ul[role="menubar"] ul[role="menu"]>li {
+        padding-left: 1em;
+        padding-top: calc(0.25em + 3px);
+        padding-bottom: calc(0.25em + 3px);
+        padding-right: 1em;
+        width: auto;
+        white-space: nowrap;
+        border: 1px solid black;
+        line-height: 1;
+        margin-left: -1px;
+        min-width: 5em;
+        background-color: white;
+    }
+
+    ul[role="menubar"] ul[role="menu"]>li:first-child {
+        border-top: none;
+        margin-top: 2px;
+    }
+
+    ul[role="menubar"] ul[role="menu"]>li+li {
+        border-top: none;
+    }
+
+    ul[role="menu"]>li:hover,
+    ul[role="menu"]>li:focus {
+        background-color: darkblue !important;
+        color: white;
+        outline: none;
+    }
+
+    [role="menuitemradio"][aria-checked="true"]:before {
+        content: '\2713';
+        display: block;
+        float: left;
+        width: 1em;
+        text-align: center;
+        margin-left: -1em;
+        font-weight: bold;
+    }
+
+    [role="menuitemradio"][aria-checked="true"][data-toggle="true"]:before {
+        display: none;
+    }
+
+    ul[role="menu"] [aria-disabled="true"] {
+        color: #999;
+    }
+
+    ul[role="menu"] [aria-disabled="true"]:focus,
+    ul[role="menu"] [aria-disabled="true"]:hover {
+        color: #999;
+        background-color: #eee;
+        cursor: default !important;
+        outline: 1px solid #999;
+    }
+}

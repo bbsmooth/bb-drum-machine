@@ -1,0 +1,215 @@
+/* Pad.css */
+
+.padWrap {
+    display: flex;
+    flex-direction: column;
+    /*margin: 0 auto;*/
+    width: 100%;
+}
+.padWrap + .padWrap {
+    /*margin-left: 0.75em;*/
+    margin-top: 1em;
+}
+
+.pad {
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: #F6F5F4;
+	padding-top: 100%;
+	position: relative;
+	display: block;
+}
+/*
+.pad {
+    width: 30%;
+    height: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+    align-items: center;
+    background-color: #F6F5F4;
+}
+*/
+
+.pad:hover {
+    cursor: pointer;
+}
+.pad .key {
+    text-transform: capitalize;
+}
+.pad:focus {
+    outline: 3px dotted black;
+}
+
+.padWrap .volumeCtrl {
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 0.9em;
+    position: relative;
+    margin-top: 0.5em;
+}
+.padWrap .volumeCtrl label {
+    font-size: 0.8em;
+    padding-right: 0.25em;
+}
+.padWrap .volumeCtrl input {
+    /*width: 100%;*/
+    /* Fix for Firefox */
+    width: calc(100% - 2.5em);
+}
+.volumeCtrl input:focus {
+    outline: 3px dotted black;
+}
+.volumeCtrl input:hover {
+    cursor: pointer;
+}
+/*
+.editName {
+    margin-top: 1em;
+}
+*/
+.fileLoad button, .editName button {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	display: inline-block;
+	border: 1px solid darkgray;
+    border-radius: 0.2em;
+    font-size: 0.8em;
+    background-color: #F6F5F4;
+    padding: 0.25em 0.5em;
+    min-width: 46px;
+    min-height: 36px;
+}
+.fileLoad button:focus, .editName button:focus {
+    outline: 2px dotted black;
+}
+.fileLoad button:hover, .editName button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+[data-power="off"] .fileLoad button:hover,
+[data-power="off"] .editName button:hover {
+    background-color: #F6F5F4;
+}
+.padCtrlWrap {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5em;
+}
+.padButtonWrap {
+    position: relative;
+}
+.padButtonWrap .editInput {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+.padButtonWrap .editInput input {
+    height: 50%;
+    width: 100%;
+    resize: none;
+}
+.pad .name {
+	overflow-wrap: break-word;
+	position: absolute;
+	top: 0.5em;
+    left: 0;
+    padding: 0 0.5em;
+    width: calc(100% - 1em);
+}
+/*
+.pad .name {
+    padding-top: 0.5em;
+    max-width: 8.5em;
+    overflow-wrap: break-word;
+}
+*/
+.pad .name[contenteditable="true"] {
+    background-color: white;
+    min-height: 1.5em;
+    min-width: 7em;
+    outline: 3px dotted black !important;
+}
+.pad .name[contenteditable="true"]:hover {
+    cursor: text;
+}
+.pad .keyWrap {
+	position: absolute;
+	bottom: 1em;
+	font-size: 2.5em;
+    left: calc(50% - 0.75em);
+    height: 1.5em;
+    width: 1.5em;
+    display: flex;
+    justify-content: center;
+}
+/*
+.pad .keyWrap {
+	position: absolute;
+	width: 1.5em;
+	height: 1.5em;
+	bottom: 4em;
+}
+*/
+/*
+.pad .keyWrap {
+    position: relative;
+    text-align: center;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 auto;
+}
+*/
+.pad .key {
+    font-weight: bold;
+    line-height: 1.5;
+}
+[data-drumpadkeys="false"] .pad .key {
+    opacity: .35;
+}
+.pad .not-allowed {
+    display: none;
+    position: absolute;
+    opacity: 0.4;
+    left: 0;
+}
+.pad .not-allowed img {
+    height: 1.5em;
+    width: 1.5em;
+}
+[data-drumpadkeys="false"] .pad .not-allowed {
+    display: inline;
+}
+[data-power="off"] button.pad,
+[data-power="off"] button.pad:hover 
+{
+    background-color: #F6F5F4;
+}
+button.pad:hover {
+    background-color: white;
+}
+.volumeDisplay {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 1.75em;
+    border: 1px solid black;
+    text-align: center;
+    z-index: 9999;
+}
+.display-volume .volumeDisplay {
+    display: block;
+    top: -1.5em;
+}
